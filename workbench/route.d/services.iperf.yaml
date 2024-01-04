@@ -1,0 +1,6 @@
+version: "0.1"
+type: route
+data:
+  url: "/services/iperf"
+  title: _("iPerf")
+  component: omv-services-iperf-navigation-page
