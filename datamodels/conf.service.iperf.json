@@ -1,0 +1,21 @@
+{
+        "type": "config",
+        "id": "conf.service.iperf",
+        "title": "iPerf",
+        "queryinfo": {
+                "xpath": "//services/iperf",
+                "iterable": false
+        },
+        "properties": {
+                "enable": {
+                        "type": "boolean",
+                        "default": false
+                },
+                "port": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 65535,
+                        "default": 5201
+                }
+        }
+}
