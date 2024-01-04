@@ -1,0 +1,27 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-iperf-settings-form-page
+  type: formPage
+  config:
+    fields:
+      - type: checkbox
+        name: enable
+        label: _("Enabled")
+        value: false
+      - type: numberInput
+        name: port
+        label: _("Port")
+        hint: _("Port to listen on.")
+        value: 5201
+        validators:
+          min: 1
+          max: 65535
+          patternType: port
+          required: true
+    buttons:
+      - template: cancel
+        execute:
+          type: url
+          url: "/services"
+      - template: submit
