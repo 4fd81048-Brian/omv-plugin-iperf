@@ -29,11 +29,7 @@ set -e
 #   <services>
 #     <iperf>
 #       <enable>0|1</enable>
-#       <host></host>
 #       <port>5201</port>
-#       <udp>0|1</udp>
-#       <parallel>1</parallel>
-#       <reverse>0|1</reverse>
 #     </iperf>
 #   </services>
 # </config>
@@ -41,11 +37,7 @@ set -e
 if ! omv_config_exists "/config/services/iperf"; then
         omv_config_add_node "/config/services" "iperf"
         omv_config_add_key "/config/services/iperf" "enable" "0"
-        omv_config_add_key "/config/services/iperf" "host" ""
         omv_config_add_key "/config/services/iperf" "port" "5201"
-        omv_config_add_key "/config/services/iperf" "udp" "0"
-        omv_config_add_key "/config/services/iperf" "parallel" "1"
-        omv_config_add_key "/config/services/iperf" "reverse" "0"
 fi
 
 exit 0
