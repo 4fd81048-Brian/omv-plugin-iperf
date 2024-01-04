@@ -1,0 +1,6 @@
+version: "0.1"
+type: route
+data:
+  url: "/services/iperf/tasks"
+  title: _("Tasks")
+  component: omv-services-iperf-tasks-datatable-page

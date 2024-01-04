@@ -1,0 +1,7 @@
+version: "0.1"
+type: route
+data:
+  url: "/services/iperf/settings"
+  title: _("Settings")
+  editing: true
+  component: omv-services-iperf-settings-form-page
