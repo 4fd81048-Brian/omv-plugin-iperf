@@ -1,40 +1,51 @@
-#!/bin/sh
+#!/usr/bin/env dash
+#
+# This file is part of OpenMediaVault.
 #
 # @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
 # @author    Volker Theile <volker.theile@openmediavault.org>
-# @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
-# @copyright Copyright (c) 2009-2013 Volker Theile
-# @copyright Copyright (c) 2013-2024 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2009-2023 Volker Theile
 #
-# This program is free software: you can redistribute it and/or modify
+# OpenMediaVault is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # any later version.
 #
-# This program is distributed in the hope that it will be useful,
+# OpenMediaVault is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
+# along with OpenMediaVault. If not, see <http://www.gnu.org/licenses/>.
 
 set -e
 
 . /usr/share/openmediavault/scripts/helper-functions
 
-SERVICE_XPATH_NAME="iperf"
-SERVICE_XPATH="/config/services/${SERVICE_XPATH_NAME}"
-
-if ! omv_config_exists "${SERVICE_XPATH}"; then
-    omv_config_add_node "/config/services" "${SERVICE_XPATH_NAME}"
-    omv_config_add_key "${SERVICE_XPATH}" "enable" "0"
-    omv_config_add_key "${SERVICE_XPATH}" "name" "iPerf Server on OpenMediaVault"
-    omv_config_add_key "${SERVICE_XPATH}" "netinterface" ""
-    omv_config_add_key "${SERVICE_XPATH}" "port" "5201"
+########################################################################
+# Update the configuration.
+# <config>
+#   <services>
+#     <iperf>
+#       <enable>0|1</enable>
+#       <host></host>
+#       <port>5201</port>
+#       <udp>0|1</udp>
+#       <parallel>1</parallel>
+#       <reverse>0|1</reverse>
+#     </iperf>
+#   </services>
+# </config>
+########################################################################
+if ! omv_config_exists "/config/services/iperf"; then
+        omv_config_add_node "/config/services" "iperf"
+        omv_config_add_key "/config/services/iperf" "enable" "0"
+        omv_config_add_key "/config/services/iperf" "host" ""
+        omv_config_add_key "/config/services/iperf" "port" "5201"
+        omv_config_add_key "/config/services/iperf" "udp" "0"
+        omv_config_add_key "/config/services/iperf" "parallel" "1"
+        omv_config_add_key "/config/services/iperf" "reverse" "0"
 fi
-
-echo "Add ${SERVICE_XPATH_NAME} user to group: users"
-usermod -G users ${SERVICE_XPATH_NAME}
 
 exit 0
