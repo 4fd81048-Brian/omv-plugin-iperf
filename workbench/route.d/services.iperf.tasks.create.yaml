@@ -1,7 +1,0 @@
-version: "0.1"
-type: route
-data:
-  url: "/services/iperf/tasks/create"
-  title: _("Create")
-  notificationTitle: _("Created task.")
-  component: omv-services-iperf-tasks-form-page
