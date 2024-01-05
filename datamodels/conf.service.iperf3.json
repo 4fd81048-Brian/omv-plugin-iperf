@@ -1,0 +1,15 @@
+{
+        "type": "config",
+        "id": "conf.service.iperf3",
+        "title": "iPerf3",
+        "queryinfo": {
+                "xpath": "//services/iperf3",
+                "iterable": false
+        },
+        "properties": {
+                "enable": {
+                        "type": "boolean",
+                        "default": false
+                }
+        }
+}
