@@ -1,8 +1,0 @@
-version: "0.1"
-type: navigation-item
-data:
-  path: "services.iperf.tasks"
-  position: 10
-  text: _("Tasks")
-  icon: "mdi:calendar-clock"
-  url: "/services/iperf/tasks"
