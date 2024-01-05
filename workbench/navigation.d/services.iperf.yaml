@@ -1,7 +1,0 @@
-version: "0.1"
-type: navigation-item
-data:
-  path: "services.iperf"
-  text: _("iPerf")
-  icon: "mdi:wiper"
-  url: "/services/iperf"
