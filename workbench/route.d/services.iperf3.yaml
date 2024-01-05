@@ -1,0 +1,7 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/iperf3"
+  title: _("iPerf3")
+  editing: true
+  component: omv-services-iperf3-form-page
