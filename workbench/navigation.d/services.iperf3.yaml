@@ -1,0 +1,7 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: "services.iperf3"
+  text: _("iPerf3")
+  icon: mdi:wiper
+  url: "/services/iperf3"
