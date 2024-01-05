@@ -1,8 +1,0 @@
-version: "0.1"
-type: route
-data:
-  url: "/services/iperf/tasks/edit/:uuid"
-  title: _("Edit")
-  editing: true
-  notificationTitle: _("Edit task.")
-  component: omv-services-iperf-tasks-form-page
